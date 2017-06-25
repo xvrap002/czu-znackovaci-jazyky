@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fotbalove_tymy autor="Pavel Vraj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vraj_pavel.xsd">
+  <tym ID="1">
+    <jmeno_tymu>AC Sparta Praha</jmeno_tymu>
+    <zeme>CZE</zeme>
+    <adresa>
+      <ulice cislo_popisne="1066" cislo_orientacni="98">Milady Horákové</ulice>
+      <mesto>Praha 7 - Letná</mesto>
+      <psc>170 82</psc>
+    </adresa>
+    <web_adresa>http://www.sparta.cz</web_adresa>
+    <tymove_barvy>
+      <barva poradi="1">
+        <jmeno_barvy red="184" green="40" blue="46">Červená</jmeno_barvy>
+      </barva>
+      <barva poradi="2">
+        <jmeno_barvy red="250" green="167" blue="25">Žlutá</jmeno_barvy>
+      </barva>
+      <barva poradi="3">
+        <jmeno_barvy red="0" green="103" blue="181">Modrá</jmeno_barvy>
+      </barva>
+    </tymove_barvy>
+    <hraci_tymu>
+      <hrac cislo_dresu="1">
+        <jmeno>Pavel</jmeno>
+        <prijmeni>Vraj</prijmeni>
+        <narodnost>CZE</narodnost>
+        <narozeni>1977-08-08</narozeni>
+        <pozice>Brankář</pozice>
+        <adresa>
+          <ulice cislo_popisne="248">U Kapličky</ulice>
+          <mesto>Český Brod</mesto>
+          <psc>282 01</psc>
+        </adresa>
+        <pocatek>2015-07-01</pocatek>
+        <historie>
+          <predchozi_angazma pocatek="1986-09-01" konec="1987-06-30" golu="1" pozice="Útočník">TJ Laktos Kyje</predchozi_angazma>
+          <predchozi_angazma pocatek="1987-07-01" konec="1987-12-31" golu="0" pozice="Záložník">TJ Laktos Kyje</predchozi_angazma>
+          <predchozi_angazma pocatek="1988-01-01" konec="1988-06-30" golu="0" pozice="Bek">TJ Laktos Kyje</predchozi_angazma>
+          <predchozi_angazma pocatek="1988-07-01" konec="1990-06-30" golu="0" pozice="Brankář">TJ Laktos Kyje</predchozi_angazma>
+          <predchozi_angazma pocatek="2000-09-01" konec="2003-06-30" golu="3" pozice="Brankář">Kostým</predchozi_angazma>
+          <predchozi_angazma pocatek="2003-07-01" konec="2003-12-31" golu="0" pozice="Brankář">Restaurace u Pecků</predchozi_angazma>
+          <predchozi_angazma pocatek="2013-09-01" konec="2015-06-30" golu="5" pozice="Brankář">Redrum</predchozi_angazma>
+        </historie>
+      </hrac>
+      <hrac cislo_dresu="2">
+        <jmeno>Lájoš</jmeno>
+        <prijmeni>Báči</prijmeni>
+        <narodnost>HUN</narodnost>
+        <narozeni>1978-03-25</narozeni>
+        <pozice>Stoper</pozice>
+        <adresa>
+          <ulice cislo_popisne="13">Maďarská</ulice>
+          <mesto>Budapešť</mesto>
+          <psc>100 13</psc>
+        </adresa>
+        <pocatek>2015-03-25</pocatek>
+        <historie>
+          <predchozi_angazma pocatek="1985-09-01" konec="1994-06-30" golu="19" pozice="Předstoper">FC Feketehervár Budapešť</predchozi_angazma>
+          <predchozi_angazma pocatek="1994-07-01" konec="2005-06-30" golu="32" pozice="Stoper">FC Gulay Budapešť</predchozi_angazma>
+          <predchozi_angazma pocatek="2005-07-01" konec="2015-03-24" golu="27" pozice="Bek">Slovan Liberec</predchozi_angazma>
+        </historie>
+      </hrac>
+      <hrac cislo_dresu="10">
+        <jmeno>Mistr</jmeno>
+        <prijmeni>Očko</prijmeni>
+        <narodnost>SVK</narodnost>
+        <narozeni>1984-11-12</narozeni>
+        <pozice>Křídlo</pozice>
+        <adresa>
+          <ulice cislo_popisne="315" cislo_orientacni="10a">Pražská</ulice>
+          <mesto>Bratislava</mesto>
+          <psc>813 25</psc>
+        </adresa>
+        <pocatek>2017-01-07</pocatek>
+        <historie>
+          <predchozi_angazma pocatek="1993-10-13" konec="2013-04-10" golu="92" pozice="Univerzál">FC Slovan Bratislava</predchozi_angazma>
+          <predchozi_angazma pocatek="2013-04-11" konec="2015-02-15" golu="49" pozice="Křídlo">FC Jihlava</predchozi_angazma>
+          <predchozi_angazma pocatek="2015-02-16" konec="2017-01-06" golu="31" pozice="Křídlo">Galatsaray Istambul</predchozi_angazma>
+        </historie>
+      </hrac>
+    </hraci_tymu>
+  </tym>
+  <tym ID="2">
+    <jmeno_tymu>FC Viktoria Plzeň</jmeno_tymu>
+    <zeme>CZE</zeme>
+    <adresa>
+      <ulice cislo_popisne="3">Štruncovy sady</ulice>
+      <mesto>Plzeň</mesto>
+      <psc>301 12</psc>
+    </adresa>
+    <web_adresa>http://www.fcviktoria.cz</web_adresa>
+    <tymove_barvy>
+      <barva poradi="1">
+        <jmeno_barvy red="225" green="0" blue="26">Červená</jmeno_barvy>
+      </barva>
+      <barva poradi="3">
+        <jmeno_barvy red="94" green="0" blue="167">Modrá</jmeno_barvy>
+      </barva>
+    </tymove_barvy>
+    <hraci_tymu>
+      <hrac cislo_dresu="1">
+        <jmeno>Jarda</jmeno>
+        <prijmeni>Vrata</prijmeni>
+        <narodnost>CZE</narodnost>
+        <narozeni>1985-12-13</narozeni>
+        <pozice>Brankář</pozice>
+        <adresa>
+          <ulice cislo_popisne="666">Božská</ulice>
+          <mesto>Plzeň</mesto>
+          <psc>300 00</psc>
+        </adresa>
+        <pocatek>2014-08-13</pocatek>
+        <historie>
+          <predchozi_angazma pocatek="1999-03-01" konec="2014-08-12" golu="2" pozice="Brankář">TJ Poslední Viktorka</predchozi_angazma>
+        </historie>
+      </hrac>
+      <hrac cislo_dresu="7">
+        <jmeno>Sir</jmeno>
+        <prijmeni>Fitzpatrik</prijmeni>
+        <narodnost>GBR</narodnost>
+        <narozeni>1993-10-23</narozeni>
+        <pozice>Záložník</pozice>
+        <adresa>
+          <ulice cislo_popisne="525">Dublinská</ulice>
+          <mesto>Londýn</mesto>
+          <psc>456 78</psc>
+        </adresa>
+        <pocatek>2016-12-09</pocatek>
+        <historie>
+          <predchozi_angazma pocatek="2005-10-05" konec="2016-12-08" golu="131" pozice="Záložník">Aston Villabongo</predchozi_angazma>
+        </historie>
+      </hrac>
+      <hrac cislo_dresu="12">
+        <jmeno>Bedřich</jmeno>
+        <prijmeni>Šnek</prijmeni>
+        <narodnost>CZE</narodnost>
+        <narozeni>1989-11-17</narozeni>
+        <pozice>Univerzál</pozice>
+        <adresa>
+          <ulice cislo_popisne="1024" cislo_orientacni="16">Bitová</ulice>
+          <mesto>Klaudov</mesto>
+          <psc>432 01</psc>
+        </adresa>
+        <pocatek>2013-03-04</pocatek>
+        <historie>
+          <predchozi_angazma pocatek="2001-09-01" konec="2008-06-30" golu="32" pozice="Univerzál">STS Chvojkovice Brod</predchozi_angazma>
+          <predchozi_angazma pocatek="2008-07-01" konec="2010-06-30" golu="4" pozice="Křídlo">TJ Vydřiduši Prknová Lhota</predchozi_angazma>
+          <predchozi_angazma pocatek="2010-07-01" konec="2012-06-30" golu="1" pozice="Záložník">AK Fotbal Šiškov</predchozi_angazma>
+          <predchozi_angazma pocatek="2012-07-01" konec="2013-03-03" golu="99" pozice="Univerzál">FC Rybitví</predchozi_angazma>
+        </historie>
+      </hrac>
+    </hraci_tymu>
+  </tym>
+</fotbalove_tymy>

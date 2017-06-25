@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="fotbalove_tymy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tym" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jmeno_tymu" type="nazev"/>
+              <xs:element name="zeme" type="xs:string"/>
+              <xs:element ref="adresa"/>
+              <xs:element name="web_adresa" type="xs:string"/>
+              <xs:element name="tymove_barvy">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="barva" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hraci_tymu">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="hrac" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="jmeno" type="xs:string"/>
+                          <xs:element name="prijmeni" type="xs:string"/>
+                          <xs:element name="narodnost" type="xs:string"/>
+                          <xs:element name="narozeni" type="xs:string"/>
+                          <xs:element name="pozice" type="hrac_pozice"/>
+                          <xs:element ref="adresa"/>
+                          <xs:element name="pocatek" type="xs:string"/>
+                          <xs:element ref="historie"/>
+                        </xs:sequence>
+                      <xs:attribute name="cislo_dresu" type="xs:string" use="required"/>
+                      </xs:complexType>
+                   </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="autor" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Definovani referencnich typu -->
+  <xs:element name="adresa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ulice">
+          <xs:complexType mixed="true">
+            <xs:attribute name="cislo_orientacni" type="xs:string"/>
+            <xs:attribute name="cislo_popisne" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mesto" type="xs:string"/>
+        <xs:element name="psc">
+          <xs:simpleType>
+            <xs:restriction base="notnull">
+              <xs:pattern value="\d{3} ?\d{2}"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="historie">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="predchozi_angazma" maxOccurs="unbounded">
+          <xs:complexType mixed="true">
+            <xs:attribute name="golu" type="xs:string" use="required"/>
+            <xs:attribute name="konec" type="xs:string" use="required"/>
+            <xs:attribute name="pocatek" type="xs:string" use="required"/>
+            <xs:attribute name="pozice" type="hrac_pozice" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="barva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="jmeno_barvy">
+          <xs:complexType mixed="true">
+            <xs:attribute name="blue" type="xs:string" use="required"/>
+            <xs:attribute name="green" type="xs:string" use="required"/>
+            <xs:attribute name="red" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="poradi" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Definovani moznych variant u elementu -->
+  <xs:simpleType name="hrac_pozice" >
+    <xs:restriction base="xs:string" >
+      <xs:enumeration value="Brankář" />
+      <xs:enumeration value="Stoper" />
+      <xs:enumeration value="Předstoper" />
+      <xs:enumeration value="Bek" />
+      <xs:enumeration value="Záložník" />
+      <xs:enumeration value="Křídlo" />
+      <xs:enumeration value="Útočník" />
+      <xs:enumeration value="Univerzál" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nazev">
+    <xs:restriction base="xs:string" >
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mezinarodni_kod" >
+    <xs:restriction base="xs:string" >
+      <xs:length value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Definovani pomocnych kontrol -->
+  <!--                  [Pomocné] Restrikce nenulových hodnot stringu                     -->
+  <xs:simpleType name="notnull">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
