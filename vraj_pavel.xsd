@@ -94,6 +94,7 @@
             <xs:attribute name="red" type="xs:string" use="required"/>
           </xs:complexType>
         </xs:element>
+        <xs:attribute name="kod_barvy" type="xs:string"/>
       </xs:sequence>
       <xs:attribute name="poradi" type="xs:string" use="required"/>
     </xs:complexType>
@@ -126,7 +127,6 @@
   </xs:simpleType>
 
   <!-- Definovani pomocnych kontrol -->
-  <!--                  [Pomocné] Restrikce nenulových hodnot stringu                     -->
   <xs:simpleType name="notnull">
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>

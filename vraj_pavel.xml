@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="vraj_pavel.xsl"?>
 
 <fotbalove_tymy autor="Pavel Vraj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vraj_pavel.xsd">
   <tym ID="1">
@@ -13,12 +14,15 @@
     <tymove_barvy>
       <barva poradi="1">
         <jmeno_barvy red="184" green="40" blue="46">Červená</jmeno_barvy>
+        <kod_barvy>#B8282E</kod_barvy>
       </barva>
       <barva poradi="2">
         <jmeno_barvy red="250" green="167" blue="25">Žlutá</jmeno_barvy>
+        <kod_barvy>#FAA719</kod_barvy>
       </barva>
       <barva poradi="3">
         <jmeno_barvy red="0" green="103" blue="181">Modrá</jmeno_barvy>
+        <kod_barvy>#0067B5</kod_barvy>
       </barva>
     </tymove_barvy>
     <hraci_tymu>
@@ -94,9 +98,11 @@
     <tymove_barvy>
       <barva poradi="1">
         <jmeno_barvy red="225" green="0" blue="26">Červená</jmeno_barvy>
+        <kod_barvy>#E1001A</kod_barvy>
       </barva>
-      <barva poradi="3">
+      <barva poradi="2">
         <jmeno_barvy red="94" green="0" blue="167">Modrá</jmeno_barvy>
+        <kod_barvy>#5E00A7</kod_barvy>
       </barva>
     </tymove_barvy>
     <hraci_tymu>
