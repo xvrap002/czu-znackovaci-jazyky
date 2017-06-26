@@ -6,7 +6,7 @@
         <xs:element name="tym" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="jmeno_tymu" type="nazev"/>
+              <xs:element name="jmeno_tymu" type="xs:string"/>
               <xs:element name="zeme" type="xs:string"/>
               <xs:element ref="adresa"/>
               <xs:element name="web_adresa" type="xs:string"/>
@@ -27,14 +27,14 @@
                           <xs:element name="prijmeni" type="xs:string"/>
                           <xs:element name="narodnost" type="xs:string"/>
                           <xs:element name="narozeni" type="xs:string"/>
-                          <xs:element name="pozice" type="hrac_pozice"/>
+                          <xs:element name="pozice" type="xs:string"/>
                           <xs:element ref="adresa"/>
                           <xs:element name="pocatek" type="xs:string"/>
                           <xs:element ref="historie"/>
                         </xs:sequence>
-                      <xs:attribute name="cislo_dresu" type="xs:string" use="required"/>
+                        <xs:attribute name="cislo_dresu" type="xs:string" use="required"/>
                       </xs:complexType>
-                   </xs:element>
+                    </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
@@ -94,7 +94,7 @@
             <xs:attribute name="red" type="xs:string" use="required"/>
           </xs:complexType>
         </xs:element>
-        <xs:attribute name="kod_barvy" type="xs:string"/>
+        <xs:element name="kod_barvy" type="xs:string"/>
       </xs:sequence>
       <xs:attribute name="poradi" type="xs:string" use="required"/>
     </xs:complexType>
@@ -114,18 +114,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="nazev">
-    <xs:restriction base="xs:string" >
-      <xs:maxLength value="50" />
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="mezinarodni_kod" >
-    <xs:restriction base="xs:string" >
-      <xs:length value="3" />
-    </xs:restriction>
-  </xs:simpleType>
-
   <!-- Definovani pomocnych kontrol -->
   <xs:simpleType name="notnull">
     <xs:restriction base="xs:string">
@@ -134,3 +122,7 @@
   </xs:simpleType>
 
 </xs:schema>
+
+
+
+
