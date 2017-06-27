@@ -26,10 +26,10 @@
                           <xs:element name="jmeno" type="xs:string"/>
                           <xs:element name="prijmeni" type="xs:string"/>
                           <xs:element name="narodnost" type="xs:string"/>
-                          <xs:element name="narozeni" type="xs:string"/>
+                          <xs:element name="narozeni" type="xs:date"/>
                           <xs:element name="pozice" type="xs:string"/>
                           <xs:element ref="adresa"/>
-                          <xs:element name="pocatek" type="xs:string"/>
+                          <xs:element name="pocatek" type="xs:date"/>
                           <xs:element ref="historie"/>
                         </xs:sequence>
                         <xs:attribute name="cislo_dresu" type="xs:string" use="required"/>
@@ -39,7 +39,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="ID" type="xs:string" use="required"/>
+            <xs:attribute name="ID" type="xs:integer" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
@@ -75,8 +75,8 @@
         <xs:element name="predchozi_angazma" maxOccurs="unbounded">
           <xs:complexType mixed="true">
             <xs:attribute name="golu" type="xs:string" use="required"/>
-            <xs:attribute name="konec" type="xs:string" use="required"/>
-            <xs:attribute name="pocatek" type="xs:string" use="required"/>
+            <xs:attribute name="konec" type="xs:date" use="required"/>
+            <xs:attribute name="pocatek" type="xs:date" use="required"/>
             <xs:attribute name="pozice" type="hrac_pozice" use="required"/>
           </xs:complexType>
         </xs:element>
@@ -89,14 +89,14 @@
       <xs:sequence>
         <xs:element name="jmeno_barvy">
           <xs:complexType mixed="true">
-            <xs:attribute name="blue" type="xs:string" use="required"/>
-            <xs:attribute name="green" type="xs:string" use="required"/>
-            <xs:attribute name="red" type="xs:string" use="required"/>
+            <xs:attribute name="blue" type="xs:integer" use="required"/>
+            <xs:attribute name="green" type="xs:integer" use="required"/>
+            <xs:attribute name="red" type="xs:integer" use="required"/>
           </xs:complexType>
         </xs:element>
         <xs:element name="kod_barvy" type="xs:string"/>
       </xs:sequence>
-      <xs:attribute name="poradi" type="xs:string" use="required"/>
+      <xs:attribute name="poradi" type="xs:integer" use="required"/>
     </xs:complexType>
   </xs:element>
 

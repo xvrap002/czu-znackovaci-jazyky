@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dokumentace - Fotbalové týmy</title>
+    <meta name="author" content="Pavel Vraj" />
+    <meta name="keywords" content="čzu,vraj,značkovací,xml,css,xsl,xsd,zápočet" />
+  </head>
+  <body>
+    <header>
+      <h1>Dokumentace - Fotbalové týmy</h1>
+    </header>
+
+    <nav id="menu">
+      <h2>Obsah</h2>
+      <ul>
+        <li><a href="#menu">Obsah a menu</a></li>
+        <li><a href="#uvod">Úvod</a></li>
+        <li><a href="#metodika">Metodika</a></li>
+        <li><a href="#elementy">Popis elementů a atributů</a></li>
+        <li><a href="#transformace">Popis transformace</a></li>
+        <li><a href="#links">Odkazy a zdroje</a></li>
+        <li><a href="#zaver">Závěr</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <section id="uvod">
+          <h2>Úvod</h2>
+          <p>Tento dokument slouží jako popis semestrálního projektu na předmět ETE87E Značkovací jazyky kombinované studium v ročníku 2016/2017. Součástí dokumentu je popis vývoje semestrální práce obsahující tvorbu XML dokumentu, XSD schéma, XSL transformace do HTML a tato dokumentace. Tématem mé práce je má záliba ve sportu a zvolil jsem vytvoření seznamu fotbalových týmů.</p>
+        </section>
+
+        <section id="metodika">
+          <h2>Metodika</h2>
+          <p>Pro tvorbu souborů jsem používal dva programy, jeden <a href="http://xml-copy-editor.sourceforge.net/" target=_blank>XML Copy Editor</a> pro validaci a transformaci souborů, druhým byl <a href="https://www.editplus.com/">EditPlus</a>, který mi sloužil k samotnému psaní souborů a k náhledu XML v zapouzdřeném prohlížeči (protože náhled v <a href="http://xml-copy-editor.sourceforge.net/" target=_blank>XML Copy Editoru</a> mi nefungoval).<p>
+          <p>Jako první jsem si zkusil vytvořit XSD soubor, kde jsem definoval jednotlivé elementy a atributy. Následně jsem začal psát XML a podle vymyšlené struktury jsem se pokoušel naplnit XML daty. Při tomto postupu jsem narážel na zapomenutá lomítka apod. V některých situacích jsem si již nebyl schopen poradit a provedl jsem v <a href="http://xml-copy-editor.sourceforge.net/" target=_blank>XML Copy Editoru</a> vygenerování XSD z XML a poté jsem porovnával výsledek s mým původním návrhem. Výhodou vygenerování XSD je, že je plně korektní, ale nevýhodou, že neobsahuje mé kontroly a výčty. Proto jsem zachoval svůj původní XSD a pouze jsem identifikoval chybné zápisy. Pro validaci jsem použil jak zabudovanou validaci v <a href="http://xml-copy-editor.sourceforge.net/" target=_blank>XML Copy Editoru</a>, tak zároveň online nástroj na adrese <a href="http://www.utilities-online.info/xsdvalidation" target=_blank>http://www.utilities-online.info/xsdvalidation</a></p>
+          <p>Po validaci XSD s XML dohromady jsem začal vytvářet XSL transformaci. Zároveň jsem musel vytvořit i CSS soubor pro formátování tabulek primárně, jelikož zobrazení ve většině používá různé tabulky. Vývoj XSL jsem prováděl tak, že jsem vždy vytvořil koncept určité části dat a otestoval rovnou na XML. Pkud bylo něco chybně, opravil jsem to a pokračoval. Tímto způsobem jsem vyhotovil kostru. Následně jsem si vytvořil CSS soubor a testoval jsem výsledek, přičemž jsem vždy postupně upravoval jednotlivé části. V průběhu vývoje XSL jsem musel párkrát upravit samotnou strukturu XML i XSD, abych např. byly použitelené klubové barvy. Výsledek jsem transformoval do HTML souboru.</p>
+        </section>
+
+        <section id="elementy">
+          <h2>Popis elementů a atributů</h2>
+
+          <table border="1">
+            <tr>
+              <th>Položka</th>
+              <th>Typ</th>
+              <th>Popis</th>
+            </tr>
+            <tr>
+              <td>fotbalove_tymy</td>
+              <td>Element</td>
+              <td>Element, který obsahuje seznam všech týmů první ligy.</td>
+            </tr>
+            <tr>
+              <td>autor</td>
+              <td>Atribut</td>
+              <td>Moje jméno jako autora souboru.</td>
+            </tr>
+            <tr>
+              <td>tym</td>
+              <td>Element</td>
+              <td>Konkrétní tým v lize.</td>
+            </tr>
+            <tr>
+              <td>ID</td>
+              <td>Atribut</td>
+              <td>Unikátní identifikátor týmu.</td>
+            </tr>
+            <tr>
+              <td>jmeno_tymu</td>
+              <td>Element</td>
+              <td>Obsahuje jméno týmu.</td>
+            </tr>
+            <tr>
+              <td>zeme</td>
+              <td>Element</td>
+              <td>Obsahuje třímístný kód země, odkud tým pochází. Tento kód je validován na délku 3 znaky.</td>
+            </tr>
+            <tr>
+              <td id="address">adresa</td>
+              <td>Element</td>
+              <td>Element s odkazem na komplexní typ &quot;adresa&quot;, který je použitý i v dalších částech.</td>
+            </tr>
+            <tr>
+              <td>ulice</td>
+              <td>Element</td>
+              <td>Element je součástí elementu adresa a obsahuje jméno ulice. Zároveň obsahuje dva atributy čísla popisného a čísla orientačního.</td>
+            </tr>
+            <tr>
+              <td>cislo_popisne</td>
+              <td>Atribut</td>
+              <td>Obsahuje číslo popisné.</td>
+            </tr>
+            <tr>
+              <td>cislo_orientacni</td>
+              <td>Atribut</td>
+              <td>Nepovinný údaj o čísle orientačním.</td>
+            </tr>
+            <tr>
+              <td>mesto</td>
+              <td>Element</td>
+              <td>Součástí adresy a obsahuje město.</td>
+            </tr>
+            <tr>
+              <td>psc</td>
+              <td>Element</td>
+              <td>Součástí adresy a obsahuje PSČ dané adresy. Má vytvořenou kontrolu, že nemůže být prázdný a zároveň je vytvořen formát pomocí regulárního výrazu.</td>
+            </tr>
+            <tr>
+              <td>web_adresa</td>
+              <td>Element</td>
+              <td>Element obsahuje odkaz na webové stránky týmu.</td>
+            </tr>
+            <tr>
+              <td>tymove_barvy</td>
+              <td>Element</td>
+              <td>Komplexní element použitý pro seznam týmových barev.</td>
+            </tr>
+            <tr>
+              <td>barva</td>
+              <td>Element</td>
+              <td>Element jednotlivých barev, přičemž počet barev je neomenezený. Obsahuje jeden atribut.</td>
+            </tr>
+            <tr>
+              <td>poradi</td>
+              <td>Atribut</td>
+              <td>Atribut určující jakési ID barvy v rámci všech barev týmu.</td>
+            </tr>
+            <tr>
+              <td>jmeno_barvy</td>
+              <td>Element</td>
+              <td>Tento element obsahuje několik atributů a hlavně jméno barvy, které je použito v seznamu barev ve výsledném HTML.</td>
+            </tr>
+            <tr>
+              <td>red</td>
+              <td>Atribut</td>
+              <td>Kód R z RGB škály v desítkovém tvaru pro konkrétní barvu.</td>
+            </tr>
+            <tr>
+              <td>green</td>
+              <td>Atribut</td>
+              <td>Kód G z RGB škály v desítkovém tvaru pro konkrétní barvu.</td>
+            </tr>
+            <tr>
+              <td>blue</td>
+              <td>Atribut</td>
+              <td>Kód B z RGB škály v desítkovém tvaru pro konkrétní barvu.</td>
+            </tr>
+            <tr>
+              <td>hraci_tymu</td>
+              <td>Element</td>
+              <td>Komplexní element obsahující seznam všech hráčů v týmu.</td>
+            </tr>
+            <tr>
+              <td>hrac</td>
+              <td>Element</td>
+              <td>Element konkrétního hráče, kterých může být v týmu neomezeně. Obsahuje jeden atribut.</td>
+            </tr>
+            <tr>
+              <td>cislo_dresu</td>
+              <td>Atribut</td>
+              <td>Atribut hráče, který obsahuje číslo dresu.</td>
+            </tr>
+            <tr>
+              <td>jmeno</td>
+              <td>Element</td>
+              <td>Element obsahuje jméno hráče.</td>
+            </tr>
+            <tr>
+              <td>prijmeni</td>
+              <td>Element</td>
+              <td>Element obsahuje přjmení hráče.</td>
+            </tr>
+            <tr>
+              <td>narodnost</td>
+              <td>Element</td>
+              <td>Element je řetězcová reprezentace národnosti.</td>
+            </tr>
+            <tr>
+              <td>narozeni</td>
+              <td>Element</td>
+              <td>Element typu datum, který obsahuje datum narození hráče.</td>
+            </tr>
+            <tr>
+              <td>pozice</td>
+              <td>Element</td>
+              <td>Element omezený na seznam konkrétních hodnot pomocí jednoduchého typu s enumerátory.</td>
+            </tr>
+            <tr>
+              <td>adresa</td>
+              <td>Element</td>
+              <td>Element obsahující odkaz na komplexní typ adresy (více informací zde <a href="#address">adresa</a>).</td>
+            </tr>
+            <tr>
+              <td>pocatek</td>
+              <td>Element</td>
+              <td>Element typu datum obsahující datum nástupu hráče do týmu.</td>
+            </tr>
+            <tr>
+              <td>historie</td>
+              <td>Element</td>
+              <td>Komplexní element (pomocí reference) obsahující hráčskou historii, kde je v tuto chvíli implementována historie angažmá hráče v předchozích týmech, které je reprezentováno samostatným elementem se čtyřmi atributy.</td>
+            </tr>
+            <tr>
+              <td>predchozi_angazma</td>
+              <td>Element</td>
+              <td>Komplexní typ elementu obsahující název předchozího týmu a čtyři atributy s detaily.</td>
+            </tr>
+            <tr>
+              <td>pocatek</td>
+              <td>Atribut</td>
+              <td>Datový typ atributu obsahující datum počátku daného angažmá.</td>
+            </tr>
+            <tr>
+              <td>konec</td>
+              <td>Atribut</td>
+              <td>Datový typ atributu obsahující datum konce daného angažmá.</td>
+            </tr>
+            <tr>
+              <td>golu</td>
+              <td>Atribut</td>
+              <td>Číselný typ atributu obsahující počet gólů, které hráč vstřelil během daného angažmá.</td>
+            </tr>
+            <tr>
+              <td>pozice</td>
+              <td>Atribut</td>
+              <td>Atribut požice odkazující na typ enumerátoru hráčských pozic.</td>
+            </tr>
+          </table>
+        </section>
+
+        <section id="transformace">
+          <h2>Popis transformace</h2>
+          <p>Samotnou transformaci do HTML jsem použil <a href="http://xml-copy-editor.sourceforge.net/" target=_blank>XML Copy Editor</a>. Díky provázanosti XSD, XML a XSL byl schopný editor jedním klikem provést transformaci do finálního HTML souboru. Samozřejmě bylo nutné, aby všechny vazby prošly validací na Well-formedness a následně bylo možné transformaci provést.</p>
+        </section>
+
+        <section id="links">
+          <h2>Odkazy a zdroje</h2>
+          <table border=1>
+            <tr>
+              <th>Položka</th>
+              <th>Popis</th>
+              <th>Odkaz</th>
+            </tr>
+            <tr>
+              <td>GitHub projekt</td>
+              <td>Odkaz na projekt v GitHub repozitáři.</td>
+              <td><a href="https://github.com/xvrap002/czu-znackovaci-jazyky" target=_blank>https://github.com/xvrap002/czu-znackovaci-jazyky</a></td>
+            </tr>
+            <tr>
+              <td>XML Copy Editor</td>
+              <td>Nástroj, který jsem použil pro vývoj a validaci XSD, XML XSL a transformaci XML do HTML.</td>
+              <td><a href="http://xml-copy-editor.sourceforge.net/" target=_blank>http://xml-copy-editor.sourceforge.net/</a></td>
+            </tr>
+            <tr>
+              <td>EditPlus</td>
+              <td>Nástroj použitý pro samotnou editaci XML souboru a testování výsledku transformace do HTML.</td>
+              <td><a href="http://www.editplus.com/" target=_blank>http://www.editplus.com/</a></td>
+            </tr>
+            <tr>
+              <td>Utilities-online.info</td>
+              <td>Online validátor XSD a XML souborů.</td>
+              <td><a href="http://www.utilities-online.info/xsdvalidation" target=_blank>http://www.utilities-online.info/xsdvalidation</a></td>
+            </tr>
+            <tr>
+              <td>w3schools.com</td>
+              <td>Vývojářská stránka umožňující pochopit jednotlivé typy dokumentů, jejih strukturu, parametry, elementy, atributy, hierarchii a zájemné vazby. Zároveň obsahuje velice účinný způsob, jak testovat různé styly a techniky pomocí integrovaného Tryit Editoru.</td>
+              <td><a href="https://www.w3schools.com/" target=_blank>https://www.w3schools.com/</a></td>
+            </tr>
+          </table>
+        </section>
+
+        <section id="zaver">
+          <h2>Závěr</h2>
+          <p>Díky této semestrální práci jsem se naučil chápat podstatu XSD a XSL (XML a HTML byly soubory, se kterými jsem již mnohokrát pracoval při mém zaměstnání). V jednom z mých předchozích zaměstnání jsem vytvořil parser, který formátoval XML do použitelného tvaru pomocí definice rozdělení jednotlivých elementů a atributů do objektů na formuláři typu textbox, combobox, listtable apod. Nyní je mi jasné, že transformace pomocí XSL je mnohem účinější, flexibilnější a rychlejší řešení.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <hr>
+      <p><a href="mailto:xvrap002@studenti.czu.cz">Pavel Vraj</a> - 2017</p>
+    </footer>
+  </body>
+</html>
